@@ -6,7 +6,7 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/25 14:02:08 by glafitte          #+#    #+#              #
-#    Updated: 2015/01/05 23:23:16 by glafitte         ###   ########.fr        #
+#    Updated: 2015/01/06 13:49:48 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,10 @@ SRCS =	src/main.c \
 		src/clear.c \
 		src/error.c \
 		src/img.c \
-		src/move.c \
+		src/decor.c \
 		src/raycasting.c \
 		src/tools.c \
+		\
 
 OBJ = $(SRCS:.c=.o)
 

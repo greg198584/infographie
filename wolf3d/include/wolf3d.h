@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 13:45:13 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/05 23:19:00 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/06 13:03:07 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,11 @@
 # define ID_RIGHT		65363
 # define ID_ESCAPE		65307
 
-# define WIDTH			800
-# define HEIGHT			600
-# define WIDTH_MINI		200
-# define HEIGHT_MINI	200
+# define WIDTH			1200
+# define HEIGHT			1000
 
-# define ID_WALL		0x424242
-# define ID_GROUND		0x004600
+# define ID_WALL		0x778899
+# define ID_GROUND		0x8B4513
 # define ID_SKY			0x33CCFF
 
 # define ID_KEYP		2
@@ -94,5 +92,7 @@ int					ft_img_to_pixel(t_env *param, t_img *img, int i, int *k);
 void				ft_go(t_env *param);
 void				ft_free_vec(t_vector *pos);
 int					ft_keyboard(int keycode, t_env *pr);
+void				ft_display_wall(t_env *pr);
+void				ft_wall(t_env *param, t_vector *pos);
 
 #endif

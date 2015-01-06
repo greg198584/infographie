@@ -6,11 +6,12 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 22:39:37 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/05 23:24:41 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/06 14:29:45 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
+
 
 void	ft_find_pos(t_env *game)
 {

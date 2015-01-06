@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 22:58:52 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/05 23:22:11 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/06 12:49:47 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ t_img	*ft_initimg(void *ptr)
 	img->data = mlx_get_data_addr(ptr, &(img->bpp), &(img->sizeline),
 			&(img->endian));
 	return (img);
+}
+
+void	ft_wall(t_env *param, t_vector *pos)
+{
+	ft_check_collision(param, pos);
+	ft_sky_ground(param);
+	ft_display_wall(param);
+	mlx_put_image_to_window(param->mlx, param->win, param->img, 0, 0);
 }
 
 void	ft_sky_ground(t_env *param)

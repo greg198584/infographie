@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 21:20:06 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/05 23:18:45 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/06 12:40:17 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int	ft_keyboard(int keycode, t_env *pr)
 		key = 0;
 	if (keycode == ID_ESCAPE)
 		ft_go(pr);
-	//if (key)
-	//	my_wall(pr, pos);
+	if (key)
+		ft_wall(pr, pos);
+	ft_putchar(key);
 	ft_free_vec(pos);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 13:42:00 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/05 23:23:07 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/06 13:49:56 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ static void	ft_load_ptr(t_env *ptr)
 		ft_puterror("error: problem with mlx_new_window!\n");
 	if ((ptr->img = mlx_new_image(ptr->mlx, WIDTH, HEIGHT)) == NULL)
 		ft_puterror("error: problem with mlx_new_image!\n");
-	if ((ptr->sky = mlx_xpm_file_to_image(ptr->mlx, "./img/img_sky.xpm", &w, &h))
-			== NULL || w != 800 || h != 300)
+	if ((ptr->sky = mlx_xpm_file_to_image(ptr->mlx, "./img/montagne.xpm", &w, &h))
+			== NULL || w != 1200 || h != 500)
 		ft_puterror("error: problem with mlx_xpm_file_to_image!\n");
 }
 
 int	main(void)
 {
-	t_env	*game; //ptr
+	t_env	*game;
 
 	if ((game = malloc(sizeof(*game))) == NULL)
 		ft_puterror("erreur: probleme d'allocation memoire!\n");

@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 21:20:19 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/05 23:11:38 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/06 12:35:04 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	ft_display_img(t_env *game)
 {
 	ft_sky_ground(game);
-	//ft_display_wall(game);
+	ft_display_wall(game);
 }
 
 int	ft_pixel_to_img(t_img *img, unsigned char *color, int i)

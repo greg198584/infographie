@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 21:20:11 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/05 22:55:13 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/06 12:52:55 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	ft_init_lab(t_env *map, char array[15][15])
 
 static void	ft_array(t_env *lab)
 {
-	char		array[15][15] = {
+	char	array[15][15] = {
 		{"111111111111111"},
 		{"100000000000001"},
 		{"100000000000001"},
@@ -85,5 +85,5 @@ static void	ft_array(t_env *lab)
 void	ft_conf(t_env *game)
 {
 	ft_array(game);
-	ft_find_pos(game);
+//	ft_find_pos(game);
 }
