@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/09 11:00:58 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/23 13:45:38 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/14 10:08:09 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ char	*ft_option_hexa(unsigned int nbr, char option, t_size *len)
 char	*ft_option_octal(int nbr, char option, t_size *len)
 {
 	char	*nbr_o;
-	int		i;
 
-	i = 0;
 	nbr_o = ft_memalloc(sizeof(char) * 1024);
 	if (nbr == 0)
 		return ("0");

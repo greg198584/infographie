@@ -6,14 +6,14 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/12 07:48:10 by glafitte          #+#    #+#             */
-/*   Updated: 2014/12/23 16:12:52 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/14 10:07:32 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdlib.h>
 
-static int		ft_test(const char *format, int *i, t_size *len)
+static int		ft_test(const char *format, int *i)
 {
 	if (format[*i] == '+')
 		ft_putchar('+');
@@ -46,9 +46,6 @@ static void		ft_flag(const char *fmt, int i, va_list ap, t_size *len)
 
 static void		ft_call(const char *format, int *i, va_list ap, t_size *len)
 {
-	int	y;
-
-	y = 0;
 	len->count = -2;
 	len->precision = 0;
 	*i = *i + 1;
@@ -66,7 +63,7 @@ static void		ft_call(const char *format, int *i, va_list ap, t_size *len)
 	}
 	if (format[*i] >= '1' && format[*i] <= '9')
 		ft_precision_checking(format, i, len);
-	ft_test(format, i, len);
+	ft_test(format, i);
 	ft_flag(format, *i, ap, len);
 }
 

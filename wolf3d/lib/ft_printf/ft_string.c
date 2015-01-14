@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 09:58:55 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/13 15:58:36 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/14 10:10:56 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,20 +104,11 @@ int			ft_test_big_s(const char *fmt, int i, va_list ap)
 					fmt[i] == '+' || fmt[i] == ' ')
 				i++;
 			if (fmt[i] == 'S')
-			{
-				if (ft_check_string_test(va_arg(ap, char *)))
-					return (1);
-				else
-					return (0);
-			}
+				return (ft_check_string_test(va_arg(ap, char *)));
 			if (fmt[i] == 'C')
-			{
-				if (ft_test_big_c(va_arg(ap, int)))
-					return (1);
-				else
-					return (0);
-			}
+				return(ft_test_big_c(va_arg(ap, int)));
 		}
 		i++;
 	}
+	return (0);
 }

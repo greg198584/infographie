@@ -6,15 +6,14 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/10 13:50:00 by glafitte          #+#    #+#              #
-#    Updated: 2014/12/23 09:33:21 by glafitte         ###   ########.fr        #
+#    Updated: 2015/01/14 10:05:37 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = libftprintf.a
-CFLAGS = -Wall -Werror -Wextra
-FLAGS = -g -c
+FLAGS = -Wall -Werror -Wextra -g -c
 LIBFT = libft
 SRCS =ft_printf.c \
 		ft_putnbr_hexa.c \
