@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 21:20:19 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/09 12:34:45 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/13 09:01:43 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_pixel_to_img(t_img *img, unsigned char *color, int i)
 	if (!img->endian)
 	{
 		j = -1;
-		while (++j < img->bpp / 8)
+		while (++j < img->bpp / 10)
 		{
 			img->data[i] = color[j];
 			++i;
@@ -35,7 +35,7 @@ int	ft_pixel_to_img(t_img *img, unsigned char *color, int i)
 	}
 	else
 	{
-		j = img->bpp / 8;
+		j = img->bpp / 10;
 		while (--j >= 0)
 		{
 			img->data[i] = color[j];

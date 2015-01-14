@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 22:58:52 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/09 11:58:58 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/12 10:03:04 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_sky_ground(t_game *e)
 	unsigned int	color;
 	unsigned char	*ground;
 
-	color = mlx_get_color_value(e->mlx, COLOR_GROUND);
+	color = mlx_get_color_value(e->mlx, GREY);
 	ground = (unsigned char *)&color;
 	i = 0;
 	while (i < HEIGHT * e->pic->sizeline)

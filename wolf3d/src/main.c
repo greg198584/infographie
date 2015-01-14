@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 13:42:00 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/09 12:42:16 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/14 08:33:28 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,25 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static void	ft_load_ptr(t_game *ptr)
-{
-	if ((ptr->mlx = mlx_init()) == NULL)
-		ft_puterror("erreur: probleme mlx_init!\n");
-	if ((ptr->win = mlx_new_window(ptr->mlx, WIDTH, HEIGHT, "wolf3d")) == NULL)
-		ft_puterror("erreur: probleme  mlx_new_window!\n");
-	if ((ptr->img = mlx_new_image(ptr->mlx, WIDTH, HEIGHT)) == NULL)
-		ft_puterror("erreur: probleme mlx_new_image!\n");
-}
-
-int	main(void)
+void	ft_conf_game(int map)
 {
 	t_game	*game;
 
 	if ((game = malloc(sizeof(*game))) == NULL)
 		ft_puterror("erreur: probleme d'allocation memoire!\n");
-	ft_load_ptr(game);
+	ft_load(game);
 	if ((game->move = malloc(sizeof(*(game->move)))) == NULL)
 		ft_puterror("erreur: probleme d'allocation memoire!\n");
-	ft_conf_map(game);
+	ft_conf_map(game, map);
 	game->pic = ft_initimg(game->img);
 	ft_display_img(game);
 	mlx_expose_hook(game->win, ft_expose, game);
 	mlx_hook(game->win, 2, 3, ft_keyboard, game);
 	mlx_loop(game->mlx);
+}
+
+int		main(void)
+{
+	ft_conf_game(1);
 	return (0);
 }

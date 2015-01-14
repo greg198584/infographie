@@ -6,11 +6,12 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/06 12:31:16 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/09 12:43:30 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/13 16:16:48 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
+#include <stdlib.h>
 
 static void	ft_write_wall(t_game *e, int x)
 {
@@ -34,9 +35,9 @@ static void	ft_write_wall(t_game *e, int x)
 
 void	ft_display_wall(t_game *e)
 {
-	float x;
-	float y;
-	float i;
+	float	x;
+	float	y;
+	float	i;
 
 	i = -1;
 	while (++i <= WIDTH)

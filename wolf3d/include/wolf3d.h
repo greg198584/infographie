@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 13:45:13 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/09 12:43:23 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/14 08:33:17 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WOLF3D_H
 
 # include "../lib/libft/libft.h"
+# include "../lib/ft_printf/ft_printf.h"
 # include <mlx.h>
 
 # define ID_UP			65362
@@ -29,9 +30,11 @@
 # define GREY			ft_get_rgb(128, 128, 128)
 # define GREEN			ft_get_rgb(46, 139, 87)
 # define BROWN			ft_get_rgb(139, 69, 9)
+# define BLUE			ft_get_rgb(0, 255, 255)
 
 # define COLOR_WALL		BROWN
-# define COLOR_GROUND	GREY
+# define MAP1			"map/map1"
+# define MAP2			"map/map2"
 
 typedef struct		s_vector
 {
@@ -70,6 +73,7 @@ typedef struct		s_game
 	void			*img;
 	t_img			*pic;
 	t_labyrinth		*lab;
+	t_labyrinth		*lab2;
 	t_move			*move;
 }					t_game;
 
@@ -79,8 +83,6 @@ t_img				*ft_initimg(void *ptr);
 int					ft_expose(t_game *e);
 t_img				*ft_initimg(void *ptr);
 void				ft_wall(t_game *param, t_vector *pos);
-void				ft_conf_map(t_game *lab);
-void				ft_init_lab(t_game *map, char array[15][15]);
 void				ft_puterror(char *error);
 void				ft_calc_angles(float *sin_ang, float *cos_ang);
 float				ft_range(t_game *e, float x, float y);
@@ -97,5 +99,10 @@ void				ft_check_collision(t_game *e, t_vector *pos);
 void				ft_free_game(t_game *e);
 void				ft_free_vec(t_vector *pos);
 t_vector			*ft_init_pos(void);
+void				ft_load(t_game *e);
+void				ft_init_lab(t_game *e, char **map);
+void				ft_init_lab2(t_game *e, char **map);
+void				ft_conf_map(t_game *lab, int map);
+void				ft_conf_game(int map);
 
 #endif
