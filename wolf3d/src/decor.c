@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/06 12:31:16 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/13 16:16:48 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/15 16:29:25 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,22 @@ static void	ft_write_wall(t_game *e, int x)
 	int				wall_l;
 	int				y;
 	unsigned int	color;
-	unsigned char	*wall;
 
 	color = mlx_get_color_value(e->mlx, COLOR_WALL + (e->move->range_k * 8));
 	wall_l = (HEIGHT / (2 * e->move->range_k));
 	y = ((HEIGHT / 2) * e->pic->sizeline) + (x * e->pic->bpp / 8);
-	wall = (unsigned char *)&color;
+	e->wall = (unsigned char *)&color;
+	color = mlx_get_color_value(e->mlx, BLUE + (e->move->range_k * 8));
+	e->wall2 = (unsigned char *)&color;
 	i = -1;
 	while (++i < wall_l)
 	{
-		ft_pixel_to_img(e->pic, wall, y - (i * e->pic->sizeline));
-		ft_pixel_to_img(e->pic, wall, y + (i * e->pic->sizeline));
+		ft_pixel_to_img(e->pic, e->wall, y - (i * e->pic->sizeline));
+		ft_pixel_to_img(e->pic, e->wall2, y + (i * e->pic->sizeline));
 	}
 }
 
-void	ft_display_wall(t_game *e)
+void		ft_display_wall(t_game *e)
 {
 	float	x;
 	float	y;

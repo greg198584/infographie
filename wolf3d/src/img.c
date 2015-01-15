@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 22:58:52 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/12 10:03:04 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/15 16:31:13 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,16 @@ void	ft_wall(t_game *e, t_vector *pos)
 void	ft_sky_ground(t_game *e)
 {
 	int				i;
+	int				k;
 	unsigned int	color;
 	unsigned char	*ground;
 
 	color = mlx_get_color_value(e->mlx, GREY);
 	ground = (unsigned char *)&color;
 	i = 0;
+	k = 0;
+	while (i < (e->pic->sizeline * (HEIGHT / 2)))
+		i = ft_img_to_pixel(e, e->sky_p, i, &k);
 	while (i < HEIGHT * e->pic->sizeline)
 		i = ft_pixel_to_img(e->pic, ground, i);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/05 13:45:13 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/15 14:06:01 by glafitte         ###   ########.fr       */
+/*   Created: 2015/01/15 14:52:02 by glafitte          #+#    #+#             */
+/*   Updated: 2015/01/15 16:29:02 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "../lib/libft/libft.h"
 # include <mlx.h>
-
-#include <stdio.h>
 
 # define ID_UP			65362
 # define ID_DOWN		65364
@@ -72,12 +70,17 @@ typedef struct		s_game
 	void			*win;
 	void			*img;
 	char			**map;
+	void			*sky;
+	unsigned char	*wall;
+	unsigned char	*wall2;
 	t_img			*pic;
+	t_img			*sky_p;
 	t_labyrinth		lab;
 	t_labyrinth		*lab2;
 	t_move			*move;
 }					t_game;
 
+int					ft_img_to_pixel(t_game *e, t_img *img, int i, int *k);
 int					ft_get_rgb(int r, int g, int b);
 void				ft_wall(t_game *param, t_vector *pos);
 t_img				*ft_initimg(void *ptr);

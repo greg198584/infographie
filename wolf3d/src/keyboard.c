@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key.c                                              :+:      :+:    :+:   */
+/*   keyboard.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/05 21:20:06 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/15 14:28:25 by glafitte         ###   ########.fr       */
+/*   Created: 2015/01/15 14:47:32 by glafitte          #+#    #+#             */
+/*   Updated: 2015/01/15 14:47:37 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <wolf3d.h>
 #include <stdlib.h>
-
-#include <stdio.h>
 
 static void	ft_change_map(t_game *e, t_vector *pos)
 {
@@ -21,6 +19,12 @@ static void	ft_change_map(t_game *e, t_vector *pos)
 	ft_free_vec(pos);
 	ft_conf_game(2);
 	ft_putendl("Chargement nouvelle map");
+}
+
+static void	ft_exit_game(t_game *e)
+{
+	ft_free_game(e);
+	exit(EXIT_SUCCESS);
 }
 
 int			ft_keyboard(int keycode, t_game *e)
@@ -41,10 +45,7 @@ int			ft_keyboard(int keycode, t_game *e)
 	else
 		key = 0;
 	if (keycode == ID_ESCAPE)
-	{
-		ft_free_game(e);
-		exit(EXIT_SUCCESS);
-	}
+		ft_exit_game(e);
 	if (key)
 		ft_wall(e, pos);
 	if ((pos->x > 1 && pos->x < 2) && pos->y > 18)

@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 11:21:40 by glafitte          #+#    #+#             */
-/*   Updated: 2015/01/15 14:26:08 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/01/15 14:46:18 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_init_map(t_game *e, int fd)
 
 	i = 0;
 	if ((e->map = (char **)malloc(sizeof(char *) * 21)) == NULL)
-				ft_putendl("erreur: probleme allocation memoire!\n");
+		ft_puterror("erreur: probleme allocation memoire!\n");
 	while ((res = get_next_line(fd, &line)) > 0)
 		e->map[i++] = line;
 	close(fd);
@@ -35,7 +35,7 @@ static void	ft_init_map(t_game *e, int fd)
 void		ft_conf_map(t_game *lab, int map)
 {
 	int		fd;
-	char 	*filename;
+	char	*filename;
 
 	if (map == 1)
 		filename = MAP1;

@@ -6,14 +6,14 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/12/25 14:02:08 by glafitte          #+#    #+#              #
-#    Updated: 2015/01/15 13:46:28 by glafitte         ###   ########.fr        #
+#    Updated: 2015/01/15 16:03:22 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = wolf3d
-CFLAGS = -Wall -Werror -Wextra -g -I include/
+CFLAGS = -Wall -Wextra -Werror -g -I include/
 LIBX = -L /usr/X11/lib -lmlx -lX11 -lXext
 LIBFT = lib/libft/
 CC = gcc
